@@ -1,35 +1,35 @@
 import PropTypes from 'prop-types';
-import css from './Profile.styled';
+import{ ProfileStyle, ProfileAvatar } from './Profile.styled';
 
 export const Profile = ({ username, tag, location, avatar, stats }) => {
     return (
-        <Profile className={css.profile}>
-            <div className={css.description}>
-                <img
+        <ProfileStyle className="profile">
+            <div className="description">
+                <ProfileAvatar
                 src={avatar}
                 alt={username}
-                className={css.avatar}
+                className="avatar"
                 />
-                <p className={css.name}>{username}</p>
-                <p className={css.tag}>{tag}</p>
-                <p className={css.location}>{location}</p>
+                <p className="name">{username}</p>
+                <p className="tag">@{tag}</p>
+                <p className="location">{location}</p>
             </div>
 
-            <ul className={css.stats}>
-                <li>
-                    <span className={css.label}>Followers</span>
-                    <span className={css.quantity}>{stats.followers}</span>
+            <ul className="stats">
+                <li className="statsItem">
+                    <span className="label">Followers</span>
+                    <span className="quantity">{stats.followers}</span>
                 </li>
-                <li>
-                    <span className={css.label}>Views</span>
-                    <span className={css.quantity}>{stats.views}</span>
+                <li className="statsItem">
+                    <span className="label">Views</span>
+                    <span className="quantity">{stats.views}</span>
                 </li>
-                <li>
-                    <span className={css.label}>Likes</span>
-                    <span className={css.quantity}>{stats.likes}</span>
+                <li className="statsItem">
+                    <span className="label">Likes</span>
+                    <span className="quantity">{stats.likes}</span>
                 </li>
             </ul>
-        </Profile>
+        </ProfileStyle>
     );
 };
 
