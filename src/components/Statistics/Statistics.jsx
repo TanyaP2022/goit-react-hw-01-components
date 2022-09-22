@@ -6,7 +6,7 @@ import { randomColor } from './RandomColor';
 export const Statistics = ({title, stats}) => {
     return (
         <StatisticsStyle className ="statistics">
-            <h2 className="title">{title.toUpperCase()}</h2>
+            {title&&<h2 className="title">{title.toUpperCase()}</h2>}
             <ul className="list">
                {stats.map(item => (
                     <li key={item.id} className="item" style={randomColor()}>
@@ -18,11 +18,8 @@ export const Statistics = ({title, stats}) => {
         </StatisticsStyle>
     );
 };
-
 Statistics.propTypes = {
-    // label: PropTypes.arrayOf(PropTypes.object).isRequired,
-    // label: PropTypes.string.isRequired,
-    // percentage: PropTypes.number.isRequired,
+    title: PropTypes.string,
     items: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string.isRequired,

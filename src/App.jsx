@@ -1,7 +1,7 @@
-import user from 'user.json';
-import data from 'data.json';
-import friends from 'friends.json';
-import items from 'transactions.json';
+import user from './projectJson/user.json';
+import data from './projectJson/data.json';
+import friends from './projectJson/friends.json';
+import items from './projectJson/transactions.json';
 
 import { AppStyle} from "App.styled";
 import { Profile } from "./components/Profile/Profile";
